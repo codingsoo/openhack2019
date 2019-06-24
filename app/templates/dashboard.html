@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+  <h1 class="h2">종합 통계</h1>
+</div>
+
+<canvas class="my-4" id="scores" width="900" height="380"></canvas>
+
+<h2>팀별 점수표</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-large">
+    <thead>
+      <tr>
+        <th>팀 이름</th>
+        <th>점수</th>
+        <th>기능</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for team in team_list %}
+      <tr>
+        <td>{{ team.name }}</td>
+        <td>{{ team.score }}점</td>
+        <td>
+          <a href="/detail/{{ team.name }}">팀 성적표 보기</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+<script>
+  {% autoescape false %}
+  var ctx = document.getElementById("scores");
+  var scoreChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: {{ chart_data["names"] }},
+      datasets: [{
+        label: "팀별 점수 통계 그래프",
+        data: {{ chart_data["scores"] }},
+        backgroundColor: {{ chart_data["backgrounds"] }},
+        borderColor: {{ chart_data["borders"] }},
+        borderWidth: 1
+      }]
+    },
+    options: {
+      animation: {
+        animationScale: true
+      }
+    }
+  });
+  {% endautoescape %}
+</script>
+{% endblock %}

@@ -1,0 +1,26 @@
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="/">
+          <span data-feather="home"></span>
+          종합 통계
+        </a>
+      </li>
+    </ul>
+
+    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+      <span>팀 별 보고서</span>
+    </h6>
+    <ul class="nav flex-column mb-2">
+      {% for team in team_list %}
+      <li class="nav-item">
+        <a class="nav-link" href="/detail/{{ team.name }}">
+          <span data-feather="file-text"></span>
+          {{ team.name }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

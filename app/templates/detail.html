@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+    <h1 class="h2">보고서: {{ team["name"] }}</h1>
+  </div>
+  
+  <table class="table table-striped table-bordered table-large">
+    <tbody>
+      <tr>
+        <th>팀명</th>
+        <td>{{ team.name }}</td>
+      </tr>
+      <tr>
+        <th>마지막 정보 수집 시점</th>
+        <td>{{ team.g_timestamp }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h3>OPEG 지수 산출 정보</h3>
+  <hr>
+
+  <table class="table table-striped table-bordered table-large">
+    <tbody>
+      <tr class="table-primary">
+        <th>OPEG 지수</th>
+        <th>{{ team.score }}점</th>
+      </tr>
+      <tr>
+        <th>Commit 횟수</th>
+        <td>{{ team.commit }}개</td>
+      </tr>
+      <tr>
+        <th>CPH<br>(Commit Per Hour)</th>
+        <td>{{ team.cph }} (기준: {{ cph_criteria }}시간)</td>
+      </tr>
+      <tr>
+        <th>Branch의 갯수</th>
+        <td>{{ team.branch }}개</td>
+      </tr>
+      <tr>
+        <th>Issue의 갯수</th>
+        <td>{{ team.issue }}개</td>
+      </tr>
+      <tr>
+        <th>Pull Request의 갯수</th>
+        <td>{{ team.pr }}개</td>
+      </tr>
+      <tr>
+        <th>Contributor 수</th>
+        <td>{{ team.contributor }}명</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h3>Repository 분석 정보</h3>
+  <hr>
+  {% for repo in team.repos %}
+  <h4>{{ repo.name }}</h4>
+
+  <table class="table table-striped table-bordered table-large">
+    <tbody>
+      <tr>
+        <th>Repository 이름</th>
+        <td>{{ repo.name }}</td>
+      </tr>
+      <tr>
+        <th>Github URL</th>
+        <td><a href="{{ repo.url }}">{{ repo.url }}</a></td>
+      </tr>
+      <tr>
+        <th>License 정보</th>
+        <td>{{ repo.g_license }}</td>
+      </tr>
+      <tr>
+        <th>기술 사용 현황</th>
+        <td>{{ repo.g_languages }}</td>
+      </tr>
+      <tr>
+        <th>Commit 횟수</th>
+        <td>{{ repo.commits }}개</td>
+      </tr>
+      <tr>
+        <th>CPH<br>(Commit Per Hour)</th>
+        <td>{{ repo.cph }} (기준: {{ cph_criteria }}시간)</td>
+      </tr>
+      <tr>
+        <th>Branch의 갯수</th>
+        <td>{{ repo.alive_branch_count }}개</td>
+      </tr>
+      <tr>
+        <th>Branch 명단</th>
+        <td>{{ repo.g_alive_branches }}</td>
+      </tr>
+      <tr>
+        <th>Issue의 갯수</th>
+        <td>{{ repo.g_issues }}개</td>
+      </tr>
+      <tr>
+        <th>Issue 현황</th>
+        <td>{{ repo.issue_open }}개 열림, {{ repo.issue_closed }}개 닫힘</td>
+      </tr>
+      <tr>
+        <th>Issue 작성자 통계</th>
+        <td>{{ repo.g_issuers }}</td>
+      </tr>
+      <tr>
+        <th>Pull Request의 갯수</th>
+        <td>{{ repo.g_pr }}개</td>
+      </tr>
+      <tr>
+        <th>Pull Request 현황</th>
+        <td>{{ repo.pr_open }}개 열림, {{ repo.pr_closed }}개 닫힘</td>
+      </tr>
+      <tr>
+        <th>Contributor 수<br></th>
+        <td>{{ repo.contributor_count }}명<br>(Github 계정의 갯수 기반 분석으로 실제 기여한 계정은 이와 다를 수 있음)</td>
+      </tr>
+      <tr>
+        <th>Contributor 명단<br>(Commit 횟수)</th>
+        <td>{{ repo.g_contributors }}<br>(Github 계정의 갯수 기반 분석으로 실제 기여한 계정과 Commit의 수는 이와 다를 수 있음)</td>
+      </tr>
+    </tbody>
+  </table>
+  {% endfor %}
+{% endblock %}
