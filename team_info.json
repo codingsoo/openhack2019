@@ -2,7 +2,7 @@
     {
         "name": "C-A-S-E",
         "repos": [
-            "c-a-s-e/CASE.git"
+            "c-a-s-e/CASE"
         ]
     },
     {
@@ -65,7 +65,7 @@
     {
         "name": "같이사ㄹ자",
         "repos": [
-            "min-ki/TogetherLive",
+            "min-ki/TogetherLiveAPIServer",
             "dddeok/TogetherLiveApp"
         ]
     },
@@ -78,103 +78,113 @@
     {
         "name": "ChinaGaZo",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "chinagazo/chinagazo"
         ]
     },
     {
         "name": "주개스",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "openhack-jgs/jgs-back-end",
+            "openhack-jgs/jgs-front-end"
         ]
     },
     {
         "name": "단기몬",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "nionu0430/openhack15"
         ]
     },
     {
         "name": "키보드사냥꾼",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "keyboard-hunder/issue-hunter-web",
+            "keyboard-hunder/issue-hunter-bapp",
+            "keyboard-hunder/issue-hunter-api"
         ]
     },
     {
         "name": "야! 떳다",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "openhack-notification/openhack_notification"
         ]
     },
     {
         "name": "미네르바",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "lumyjuwon/WYSIWYG"
         ]
     },
     {
         "name": "돈비샤이",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "KMinWoo/Don-tBeShy_Server",
+            "chaangmeen/Don-tBeShy_iOS"
         ]
     },
     {
         "name": "밥조",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "openhack2019-team20/openHack"
         ]
     },
     {
         "name": "WICO",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "Famous7/openhackWi-Fi"
         ]
     },
     {
         "name": "작심평생",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "openhack22/JakSimForeverBack",
+            "openhack22/JakSimForeverAndroid"
         ]
     },
     {
         "name": "노력파",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "2019-openhack/WEB",
+            "2019-openhack/tools"
         ]
     },
     {
         "name": "dr24 (닥터24)",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "dr-24/Android",
+            "dr-24/iOS"
         ]
     },
     {
         "name": "5+1",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "DivisonOfficer/iksan"
         ]
     },
     {
         "name": "오픈백",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "openbeak/openbeak-front",
+            "openbeak/backend",
+            "openbeak/crawling"
         ]
     },
     {
         "name": "큰일났닭",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "enterpriseremote/RemotePlus"
         ]
     },
     {
         "name": "족보마켓",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "jockbo/web",
+            "jockbo/app"
         ]
     },
     {
         "name": "Market 30",
         "repos": [
-            "kookmin-sw/2018-cap1-16"
+            "Joylish/market30"
         ]
     }
 ]
