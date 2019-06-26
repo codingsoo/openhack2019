@@ -1,12 +1,178 @@
 [
     {
-        "name": "2018-cap1-1",
+        "name": "C-A-S-E",
         "repos": [
-            "kookmin-sw/2018-cap1-1"
+            "c-a-s-e/CASE.git"
         ]
     },
     {
-        "name": "2018-cap1-16",
+        "name": "Toylet",
+        "repos": [
+            "toylet/toylet", 
+            "toylet/toylet-design"
+        ]
+    },
+    {
+        "name": "문화심시티",
+        "repos": [
+            "beckchul/Culturesimcity"
+        ]
+    },
+    {
+        "name": "한잔하조",
+        "repos": [
+            "willtriti03/CupOfSoju"
+        ]
+    },
+    {
+        "name": "일정공유해조",
+        "repos": [
+            "songpang/openHack_10"
+        ]
+    },
+    {
+        "name": "A3D2",
+        "repos": [
+            "a3d2/Nibangnaebang-Frontend",
+            "a3d2/Nibangnaebang-Frontend"
+        ]
+    },
+    {
+        "name": "5days",
+        "repos": [
+            "group75days/5days"
+        ]
+    },
+    {
+        "name": "우리모두고생했조",
+        "repos": [
+            "miraae/UniMarket"
+        ]
+    },
+    {
+        "name": "TWIX",
+        "repos": [
+            "openhack-twix/Tmate-server",
+            "openhack-twix/Tmate"
+        ]
+    },
+    {
+        "name": "출결관리 참 10조",
+        "repos": [
+            "soeasy10/nepp"
+        ]
+    },
+    {
+        "name": "같이사ㄹ자",
+        "repos": [
+            "min-ki/TogetherLive",
+            "dddeok/TogetherLiveApp"
+        ]
+    },
+    {
+        "name": "HonorTicket",
+        "repos": [
+            "sihyungyou/HonorTicket"
+        ]
+    },
+    {
+        "name": "ChinaGaZo",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "주개스",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "단기몬",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "키보드사냥꾼",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "야! 떳다",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "미네르바",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "돈비샤이",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "밥조",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "WICO",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "작심평생",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "노력파",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "dr24 (닥터24)",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "5+1",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "오픈백",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "큰일났닭",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "족보마켓",
+        "repos": [
+            "kookmin-sw/2018-cap1-16"
+        ]
+    },
+    {
+        "name": "Market 30",
         "repos": [
             "kookmin-sw/2018-cap1-16"
         ]
