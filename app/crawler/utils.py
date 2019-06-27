@@ -17,15 +17,15 @@ class Analyser:
         url_array = cls.process_url(repo_list)
         processed_array = list()
         for repo, code in zip(url_array, repo_list):
-            try: 
+            try:
                 processed_array.append(
                     cls.crawl(repo, code, Config.opeg_commit)
                 )
             except:
                 print(sys.exc_info()[0], sys.exc_info()[1])
-                try: 
+                try:
                     processed_array.append(
-                        cls.crawl(repo, code, Config.opeg_commit)    
+                        cls.crawl(repo, code, Config.opeg_commit)
                     )
                 except:
                     print(sys.exc_info()[0], sys.exc_info()[1])
@@ -102,7 +102,7 @@ class Analyser:
             next_page = soup.select(".next_page")
             if len(next_page) == 0:
                 break
-            
+
             issue_url = next_page[0].get("href")
 
         # 열고 닫힌 Pull Requests의 갯수 추출
@@ -131,13 +131,25 @@ class Analyser:
                 temp_dic["count"] = person["total"]
                 ret["contributors"].append(temp_dic)
                 ret["contributor_count"] += 1
+                if ret["contributor_count"] > 6:
+                    for aaa in ret["contributors"]:
+                        del aaa
+                    break
 
-        # Recent commits (최고 20개, 최저 0개), 기간별 나누기 연산
-        print("[+] Getting CPH...")
-        soup = BeautifulSoup(requests.get(repo + "/commits/master.atom").text, "html.parser")
+        if ret["contributor_count"] > 6:
+            ret["commits"] = input("How many commits are there?")
+            num_of_people = input("How many people are there?")
+            for i in range(int(num_of_people)):
+                name = input("What is the developer's name?")
+                for person in contributors:
+                    if name == person["author"]["login"]:
+                        temp_dic = dict()
+                        temp_dic["name"] = person["author"]["login"]
+                        temp_dic["avatar"] = person["author"]["avatar"][0:-2] + "360"
+                        temp_dic["count"] = person["total"]
+                        ret["contributors"].append(temp_dic)
+            ret["contributor_count"] = num_of_people
 
-        ret["cph"] = cls.get_cph(soup, opeg_commit)
-        
         # Github의 Abuse Detection을 회피하기 위한 3초 Sleep
         print("[+] Avoiding GitHub abuse detection...")
         time.sleep(3)
@@ -156,7 +168,6 @@ class Analyser:
                 "timestamp": datetime.now(timezone("Asia/Seoul")).isoformat(),
                 "repos": list(),
                 "commit": 0,
-                "cph": 0,
                 "issue": 0,
                 "license": 0,
                 "pr": 0,
@@ -175,10 +186,8 @@ class Analyser:
                     rep_result["branch"] += int(repo["alive_branch_count"])
                     rep_result["pr"] += int(repo["pr_open"])
                     rep_result["pr"] += int(repo["pr_closed"])
-                    rep_result["cph"] += int(repo["cph"])
             rep_result["score"] = cls.get_opeg({
                 "commit": rep_result["commit"],
-                "cph": rep_result["cph"],
                 "issue": rep_result["issue"],
                 "license": rep_result["license"],
                 "pr": rep_result["pr"],
@@ -186,7 +195,7 @@ class Analyser:
                 "branch": rep_result["branch"]
             })
             ret.append(rep_result.copy())
-        
+
         return ret
 
     @classmethod
@@ -194,30 +203,13 @@ class Analyser:
         """
         주어진 팀별 점수 Dictionary를 통해서 Configuration에 입각한 OPEG 점수를 도출합니다.
         """
-        return score["commit"] * score["cph"] \
+        return score["commit"] * 10 \
              + score["issue"] * Config.opeg_issue \
              + score["license"] * Config.opeg_license \
              + score["pr"] * Config.opeg_pr \
              + score["contributor"] * Config.opeg_contributor \
              + score["branch"] * Config.opeg_branch
 
-
-    @classmethod
-    def get_cph(cls, soup, hours):
-        """주어진 DOM 객체와 기준 시간으로 CPH를 계산합니다."""
-        updated = soup.find_all('updated')
-        current_time = datetime.utcnow()
-
-        counting = 0
-        for time in updated:
-            updated_time = time.contents[0]
-            timedelta = (current_time - datetime.strptime(updated_time, "%Y-%m-%dT%H:%M:%SZ")).total_seconds()
-            if timedelta > 3600 * hours:
-                return (0 if counting == 0 else counting - 1)
-            else:
-                counting += 1
-
-        return 0 if counting == 0 else counting - 1
 
     @classmethod
     def process_url(cls, repo_list):
