@@ -8,14 +8,14 @@
     {
         "name": "Toylet",
         "repos": [
-            "toylet/toylet", 
+            "toylet/toylet",
             "toylet/toylet-design"
         ]
     },
     {
         "name": "문화심시티",
         "repos": [
-            "beckchul/Culturesimcity"
+            "beckchul/CulturesimcityTeam"
         ]
     },
     {
@@ -33,14 +33,8 @@
     {
         "name": "A3D2",
         "repos": [
-            "a3d2/Nibangnaebang-Frontend",
+            "a3d2/Nibangnaebang-Backend",
             "a3d2/Nibangnaebang-Frontend"
-        ]
-    },
-    {
-        "name": "5days",
-        "repos": [
-            "group75days/5days"
         ]
     },
     {
@@ -52,8 +46,8 @@
     {
         "name": "TWIX",
         "repos": [
-            "openhack-twix/Tmate-server",
-            "openhack-twix/Tmate"
+            "openhack-twix/Tmate",
+            "openhack-twix/Tmate-server"
         ]
     },
     {
@@ -91,7 +85,7 @@
     {
         "name": "단기몬",
         "repos": [
-            "nionu0430/openhack15"
+            "KimHeeil/OpenHack_15"
         ]
     },
     {
@@ -124,7 +118,7 @@
     {
         "name": "밥조",
         "repos": [
-            "openhack2019-team20/openHack"
+            "openhack2019-team20/danhobob"
         ]
     },
     {
@@ -148,7 +142,7 @@
         ]
     },
     {
-        "name": "dr24 (닥터24)",
+        "name": "dr24",
         "repos": [
             "dr-24/Android",
             "dr-24/iOS"
@@ -171,20 +165,21 @@
     {
         "name": "큰일났닭",
         "repos": [
-            "enterpriseremote/RemotePlus"
+            "WarningChicken/EmotionDiary"
         ]
     },
     {
         "name": "족보마켓",
         "repos": [
             "jockbo/web",
-            "jockbo/app"
+            "jockbo/Klaytn"
         ]
     },
     {
         "name": "Market 30",
         "repos": [
-            "Joylish/market30"
+            "Joylish/market30",
+            "kimhd95/market30_server"
         ]
     }
 ]
